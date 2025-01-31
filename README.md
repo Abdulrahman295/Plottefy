@@ -71,6 +71,16 @@ Once the application is running, you can interact with the GUI to input two func
 ### Unsupported Functions
 ![image](https://github.com/user-attachments/assets/601770e9-9b65-4da3-8435-f997778c9707)
 
+### Wrong Functions
+#### Mismatched Parentheses
+![image](https://github.com/user-attachments/assets/a856c56f-d50a-40b8-b6a7-732aa8eaf486)
+#### Missing Operators
+![image](https://github.com/user-attachments/assets/a73d33dc-27cb-44c3-bff5-dce5bbefcf01)
+#### Empty Parentheses
+![image](https://github.com/user-attachments/assets/4ad2d156-8e11-4d76-b341-1721735c86fc)
+### Repeated Operators
+![image](https://github.com/user-attachments/assets/2e3bf3c6-94eb-41f1-b071-869a808f4d03)
+
 
 ## 📰 License
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
