@@ -56,7 +56,21 @@ Once the application is running, you can interact with the GUI to input two func
 
 
 ## 📷 Screenshots
+### Basic Function Input
+![image](https://github.com/user-attachments/assets/d32e8710-3ca9-4c18-8926-769eca14e324)
+
+### Complex Formula Function
+![image](https://github.com/user-attachments/assets/e95008a2-b4ca-4a79-8de7-2981a5d8a96d)
+
+### Using Sqrt & log10 in Function
+![image](https://github.com/user-attachments/assets/4027cb7e-87f6-4242-a82d-e11427580358)
+
+### Empty Functions
+![image](https://github.com/user-attachments/assets/a3b030f3-a4d3-409a-84cc-aa13737d5ab9)
+
+### Unsupported Functions
+![image](https://github.com/user-attachments/assets/601770e9-9b65-4da3-8435-f997778c9707)
+
 
 ## 📰 License
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
-  
