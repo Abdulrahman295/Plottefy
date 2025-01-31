@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>802</width>
+    <height>606</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Main window and general widgets */
+QMainWindow {
+    background-color: #0d0d0d;  /* Dark background */
+}
+
+QWidget {
+    background-color: #0d0d0d;  /* Dark background */
+    color: #00ffcc;             /* Neon cyan text */
+    font-family: &quot;Courier New&quot;; /* Monospace font for a futuristic look */
+    font-size: 14px;
+    gridline-color: #00bfff;  /* Neon blue grid lines */
+}
+
+/* Input fields */
+QLineEdit {
+    padding: 10px;
+    font-size: 18px;
+    background-color: #1a1a1a;  /* Slightly lighter dark background */
+    border: 2px solid #00ffcc;  /* Neon cyan border */
+    border-radius: 10px;
+    color: #00ffcc;             /* Neon cyan text */
+    selection-background-color: #00ffcc;  /* Neon cyan selection */
+    selection-color: #0d0d0d;   /* Dark text on selection */
+	min-height: 25px;
+	max-height: 25px;
+}
+
+QLineEdit:focus {
+    border: 2px solid #ff00ff;  /* Neon magenta border on focus */
+}
+
+/* Buttons */
+QPushButton {
+    padding: 15px;
+    font-size: 14px;
+    background-color: #ff00ff;  /* Neon magenta background */
+    color: #0d0d0d;             /* Dark text */
+    border-radius: 10px;
+    border: 2px solid #ff00ff;  /* Neon magenta border */
+}
+
+QPushButton:hover {
+    background-color: #cc00cc;  /* Darker neon magenta on hover */
+    border: 2px solid #cc00cc;
+}
+
+QPushButton:pressed {
+    background-color: #990099;  /* Even darker neon magenta on press */
+    border: 2px solid #990099;
+}
+
+/* Text edit area */
+QTextEdit {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #1a1a1a;  /* Slightly lighter dark background */
+    border: 2px solid #00ffcc;  /* Neon cyan border */
+    border-radius: 10px;
+    color: #00ffcc;             /* Neon cyan text */
+}
+
+QTextEdit:focus {
+    border: 2px solid #ff00ff;  /* Neon magenta border on focus */
+}
+
+/* Scrollbars */
+QScrollBar:vertical {
+    background: #1a1a1a;        /* Dark background */
+    width: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #ff00ff;        /* Neon magenta handle */
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background: none;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QScrollBar:horizontal {
+    background: #1a1a1a;        /* Dark background */
+    height: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #ff00ff;        /* Neon magenta handle */
+    min-width: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    background: none;
+}
+
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+/* Labels */
+QLabel {
+    font-size: 16px;
+    color: #00ffcc;             /* Neon cyan text */
+    font-weight: bold;
+}
+
+/* Combo boxes */
+QComboBox {
+    padding: 5px;
+    font-size: 14px;
+    background-color: #1a1a1a;  /* Slightly lighter dark background */
+    border: 2px solid #00ffcc;  /* Neon cyan border */
+    border-radius: 10px;
+    color: #00ffcc;             /* Neon cyan text */
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left: 2px solid #00ffcc;  /* Neon cyan border */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #1a1a1a;  /* Slightly lighter dark background */
+    color: #00ffcc;             /* Neon cyan text */
+    selection-background-color: #ff00ff;  /* Neon magenta selection */
+    selection-color: #0d0d0d;   /* Dark text on selection */
+}
+
+/* Checkboxes and radio buttons */
+QCheckBox, QRadioButton {
+    color: #00ffcc;             /* Neon cyan text */
+}
+
+QCheckBox::indicator, QRadioButton::indicator {
+    border: 2px solid #00ffcc;  /* Neon cyan border */
+    background-color: #1a1a1a;  /* Slightly lighter dark background */
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+}
+
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+    background-color: #ff00ff;  /* Neon magenta background when checked */
+}
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 
+      0 0 10px #FFD700,
+      0 0 20px #FFD700,
+      0 0 30px #FFAA00,
+      0 0 40px #FF8800;
+  }
+  50% {
+    box-shadow: 
+      0 0 15px #FFD700,
+      0 0 25px #FFD700,
+      0 0 35px #FFAA00,
+      0 0 50px #FF8800;
+  }
+}
+
+QFrame[frameShape=&quot;4&quot;] { /* Horizontal line */
+    background-color: #FFD700; /* Gold color */
+    min-height: 2px; /* Thickness of the line */
+	max-height: 2px; /* Thickness of the line */
+    border: none;
+}
+
+QFrame[frameShape=&quot;5&quot;] { /* Vertical line */
+    background-color: #FFD700; /* Gold color */
+    min-width: 2px; /* Thickness of the line */
+	max-width: 2px; /* Thickness of the line */
+    border: none;
+}
+
+QLineEdit#errorDisplay {
+    background-color: #2d2d2d;  /* Dark background */
+    color: #ff4444;            /* Red text for errors */
+    font-size: 18px;
+    border: 2px solid #ff4444; /* Red border */
+    border-radius: 10px;
+    padding: 10px;
+	selection-background-color: #ff4444;  /* Neon red selection for errors */
+	selection-color: #ffffff;            /* White text for better contrast */
+}
+
+QLabel#errorDisplayLabel {
+	color: #ff4444;  /* Red text */
+    font-size: 16px;
+    font-weight: bold;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QPushButton" name="submitBtn">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>390</y>
+      <width>91</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Submit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cancelBtn">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>390</y>
+      <width>93</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cancel</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="secondFnInput">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>290</y>
+      <width>231</width>
+      <height>49</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter the Second Function&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="secondFnLabel">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>250</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Second Function</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="firstFnLabel">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>130</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>First Function</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="firstFnInput">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>180</y>
+      <width>231</width>
+      <height>49</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter the Second Function&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="QWidget" name="plotArea" native="true">
+    <property name="geometry">
+     <rect>
+      <x>329</x>
+      <y>89</y>
+      <width>441</width>
+      <height>331</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="Line" name="verticalLine">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>10</y>
+      <width>2</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>691</width>
+      <height>2</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>10</y>
+      <width>691</width>
+      <height>2</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="verticalLine_2">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>10</y>
+      <width>2</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="verticalLine_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>2</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_3">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>560</y>
+      <width>691</width>
+      <height>2</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>560</y>
+      <width>691</width>
+      <height>2</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="errorDisplayLabel">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>450</y>
+      <width>141</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Errors</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="errorDisplay">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>480</y>
+      <width>461</width>
+      <height>49</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

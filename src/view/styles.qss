@@ -1,0 +1,139 @@
+/* Main window and general widgets */
+QMainWindow {
+    background-color: #2e3440;  /* Dark blue-gray background */
+}
+
+QWidget {
+    background-color: #2e3440;  /* Dark blue-gray background */
+    color: #d8dee9;             /* Light gray text */
+    font-family: "Arial";       /* Clean, modern font */
+    font-size: 14px;
+    gridline-color: #4c566a;    /* Slightly lighter blue-gray grid lines */
+}
+
+/* Input fields */
+QLineEdit {
+    padding: 10px;
+    font-size: 18px;
+    background-color: #3b4252;  /* Darker blue-gray background */
+    border: 2px solid #4c566a;  /* Light blue-gray border */
+    border-radius: 10px;        /* More rounded corners for a softer look */
+    color: #d8dee9;             /* Light gray text */
+    selection-background-color: #81a1c1;  /* Light blue selection */
+    selection-color: #2e3440;   /* Dark blue-gray text on selection */
+    min-height: 25px;
+    max-height: 25px;
+}
+
+QLineEdit:focus {
+    border: 2px solid #88c0d0;  /* Light cyan border on focus */
+}
+
+/* Buttons */
+QPushButton {
+    padding: 15px;
+    font-size: 14px;
+    background-color: #81a1c1;  /* Light blue background */
+    color: #2e3440;             /* Dark blue-gray text */
+    border-radius: 10px;        /* More rounded corners */
+    border: 2px solid #81a1c1;  /* Light blue border */
+}
+
+QPushButton:hover {
+    background-color: #88c0d0;  /* Light cyan on hover */
+    border: 2px solid #88c0d0;
+}
+
+QPushButton:pressed {
+    background-color: #5e81ac;  /* Darker blue on press */
+    border: 2px solid #5e81ac;
+}
+
+QPushButton:disabled {
+    background-color: #4c566a;  /* Gray-blue background for disabled buttons */
+    color: #d8dee9;             /* Light gray text for disabled buttons */
+    border: 2px solid #4c566a;  /* Gray-blue border for disabled buttons */
+}
+
+/* Labels */
+QLabel {
+    font-size: 16px;
+    color: #d8dee9;             /* Light gray text */
+    font-weight: bold;
+}
+
+QFrame[frameShape="4"] { /* Horizontal line */
+    background-color: #4c566a; /* Light blue-gray color */
+    min-height: 2px; /* Thickness of the line */
+    max-height: 2px; /* Thickness of the line */
+    border: none;
+}
+
+QFrame[frameShape="5"] { /* Vertical line */
+    background-color: #4c566a; /* Light blue-gray color */
+    min-width: 2px; /* Thickness of the line */
+    max-width: 2px; /* Thickness of the line */
+    border: none;
+}
+
+#errorDisplay {
+    background-color: #3b4252;  /* Dark blue-gray background */
+    color: #bf616a;            /* Soft red text for errors */
+    font-size: 18px;
+    border: 2px solid #bf616a; /* Soft red border */
+    border-radius: 10px;       /* More rounded corners */
+    padding: 10px;
+    selection-background-color: #bf616a;  /* Soft red selection for errors */
+    selection-color: #d8dee9;            /* Light gray text for better contrast */
+}
+
+QLabel#errorDisplayLabel {
+    color: #bf616a;  /* Soft red text */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Scrollbars */
+QScrollBar:vertical {
+    background: #3b4252;        /* Dark blue-gray background */
+    width: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #81a1c1;        /* Light blue handle */
+    min-height: 20px;
+    border-radius: 10px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background: none;
+}
+
+QScrollBar::add-page:vertical,
+QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QScrollBar:horizontal {
+    background: #3b4252;        /* Dark blue-gray background */
+    height: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #81a1c1;        /* Light blue handle */
+    min-width: 20px;
+    border-radius: 10px;
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    background: none;
+}
+
+QScrollBar::add-page:horizontal,
+QScrollBar::sub-page:horizontal {
+    background: none;
+}
